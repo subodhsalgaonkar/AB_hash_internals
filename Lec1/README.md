@@ -17,7 +17,7 @@ HashTables are designed to provide ***near constant time insertion, lookups and 
 
 
 Two Ideas to construct hash tables
-1. Application Ke to hashKey [0,N)
+1. Application Key to hashKey [0,N)
         apple --> 12346789
 2. hashKey to a smaller range [0,m)             *crux of hash Table implementation*
         12346789 --> 17
@@ -25,11 +25,11 @@ Two Ideas to construct hash tables
 Language cannot restrict us for the type of the key, instead it want's to support all types of keys
 
 
-1. Application Ke to hashKey
+1. Application Key to hashKey
 We cannot put anything as a key in a HashTable
 But language allows to put anything as a key but we need to implement the hashfunction for the same ourselves
 ```Java
-// For java if you do not override the hashCode() method in your custom class, it inherits the default implementation from the java.lang.Object class.
+// For java if you do not override the hashCode() method in your custom class, it inherits the default implementation from the java.lang.Object class
 
 // The JVM generates an integer typically derived from the object's internal memory address.
 
@@ -61,11 +61,11 @@ Challanges:
 1. Finding this big continous allocation of memory is very difficult
 2. Lots of space wasted 
 
-So need to find a better way to cinstruct a hashMap
-*Idea 2 of convertin the int i to a smaller range using another hash function*
+So need to find a better way to construct a hashMap
+*Idea 2 of converting the int i to a smaller range using another hash function*
 
 ## 2. Mapping hashKey to smaller range
-If we are planning to store k keys in the hashtable we have to have an array of sixe m such that
+If we are planning to store k keys in the hashtable we need to have an array of size m such that
                 m E O(k)
 This requires us to have a second step that reduces HashKey from range to smaller range.
                 [0, N) --> [0, m)
